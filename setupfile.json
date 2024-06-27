@@ -1,0 +1,7 @@
+{
+    "elasticUser": "",
+    "elasticPassword": "",
+    "grafanaToken": "",
+    "grafanaFolder": "",
+    "logstashPath":""
+}

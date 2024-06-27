@@ -1,0 +1,12 @@
+{
+    "dashboard_uid": "",
+    "datasource_uid": "",
+    "folder_id": 0,
+    "next_row_id": 3000,
+    "download_files": [
+    ],
+    "general": {
+        "udpJitter_op": 0,
+        "httpThroughput_op": 0
+    }
+}

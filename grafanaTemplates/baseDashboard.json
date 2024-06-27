@@ -1,0 +1,543 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [],
+            "type": "dashboard"
+          },
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": null,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "collapsed": true,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 1000,
+        "panels": [
+          {
+            "datasource": {
+              "type": "grafana",
+              "uid": "grafana"
+            },
+            "gridPos": {
+              "h": 6,
+              "w": 5,
+              "x": 0,
+              "y": 9
+            },
+            "id": 1001,
+            "options": {
+              "buttonGroup": {
+                "orientation": "center",
+                "size": "md"
+              },
+              "elements": [
+                {
+                  "id": "ip",
+                  "labelWidth": 10,
+                  "section": "IP",
+                  "title": "IP",
+                  "tooltip": "",
+                  "type": "string",
+                  "value": ""
+                },
+                {
+                  "id": "username",
+                  "labelWidth": 10,
+                  "section": "SSH",
+                  "title": "Username",
+                  "tooltip": "",
+                  "type": "string",
+                  "value": ""
+                },
+                {
+                  "id": "password",
+                  "labelWidth": 10,
+                  "section": "",
+                  "title": "Password",
+                  "tooltip": "",
+                  "type": "password",
+                  "value": ""
+                }
+              ],
+              "initial": {
+                "code": "console.log(data, response, initial, elements)",
+                "contentType": "application/json",
+                "highlight": false,
+                "highlightColor": "red",
+                "method": "-"
+              },
+              "layout": {
+                "padding": 10,
+                "sections": [],
+                "variant": "single"
+              },
+              "reset": {
+                "backgroundColor": "purple",
+                "foregroundColor": "yellow",
+                "icon": "process",
+                "text": "Reset",
+                "variant": "hidden"
+              },
+              "submit": {
+                "backgroundColor": "purple",
+                "foregroundColor": "yellow",
+                "icon": "cloud-upload",
+                "text": "Submit",
+                "variant": "primary"
+              },
+              "update": {
+                "code": "if (response && response.ok) {\n  notifySuccess(['Update', 'Values updated successfully.']);\n  \"console.log(response)\"\n  \"locationService.reload() este hace falta para que se borre el de error que este de antes\"\n} else {\n  \"console.log(response)\"\n  notifyError(['Error', response.statusText]);\n}",
+                "confirm": false,
+                "contentType": "application/json",
+                "header": [],
+                "method": "POST",
+                "updatedOnly": false,
+                "url": "http://localhost:5000/add_Router"
+              }
+            },
+            "targets": [
+              {
+                "datasource": {
+                  "type": "datasource",
+                  "uid": "grafana"
+                },
+                "refId": "A"
+              }
+            ],
+            "title": "Add Router",
+            "type": "volkovlabs-form-panel"
+          },
+          {
+            "datasource": {
+              "type": "grafana",
+              "uid": "grafana"
+            },
+            "gridPos": {
+              "h": 6,
+              "w": 5,
+              "x": 5,
+              "y": 9
+            },
+            "id": 1002,
+            "options": {
+              "buttonGroup": {
+                "orientation": "center",
+                "size": "md"
+              },
+              "elements": [
+                {
+                  "id": "host",
+                  "labelWidth": 10,
+                  "section": "",
+                  "title": "Host",
+                  "tooltip": "",
+                  "type": "string",
+                  "value": ""
+                },
+                {
+                  "id": "receiver",
+                  "labelWidth": 10,
+                  "section": "",
+                  "title": "Receiver",
+                  "tooltip": "",
+                  "type": "string",
+                  "value": ""
+                }
+              ],
+              "initial": {
+                "code": "console.log(data, response, initial, elements)",
+                "contentType": "application/json",
+                "highlight": false,
+                "highlightColor": "red",
+                "method": "-"
+              },
+              "layout": {
+                "padding": 10,
+                "variant": "single"
+              },
+              "reset": {
+                "backgroundColor": "purple",
+                "foregroundColor": "yellow",
+                "icon": "process",
+                "text": "Reset",
+                "variant": "hidden"
+              },
+              "submit": {
+                "backgroundColor": "purple",
+                "foregroundColor": "yellow",
+                "icon": "cloud-upload",
+                "text": "Submit",
+                "variant": "primary"
+              },
+              "update": {
+                "code": "if (response && response.ok) {\n  notifySuccess(['Update', 'Values updated successfully.']);\n  \"console.log(response)\"\n  \"locationService.reload() este hace falta para que se borre el de error que este de antes\"\n} else {\n  \"console.log(response)\"\n  notifyError(['Error', response.statusText]);\n}",
+                "confirm": false,
+                "contentType": "application/json",
+                "method": "POST",
+                "updatedOnly": false,
+                "url": "http://localhost:5000/add_UDPJitter"
+              }
+            },
+            "targets": [
+              {
+                "datasource": {
+                  "type": "datasource",
+                  "uid": "grafana"
+                },
+                "refId": "A"
+              }
+            ],
+            "title": "Add UDPJitter Operation",
+            "type": "volkovlabs-form-panel"
+          },
+          {
+            "datasource": {
+              "type": "grafana",
+              "uid": "grafana"
+            },
+            "gridPos": {
+              "h": 6,
+              "w": 4,
+              "x": 10,
+              "y": 9
+            },
+            "id": 1003,
+            "options": {
+              "buttonGroup": {
+                "orientation": "center",
+                "size": "md"
+              },
+              "elements": [
+                {
+                  "id": "host",
+                  "labelWidth": 10,
+                  "section": "",
+                  "title": "Host",
+                  "tooltip": "",
+                  "type": "string",
+                  "value": ""
+                }
+              ],
+              "initial": {
+                "code": "console.log(data, response, initial, elements)",
+                "contentType": "application/json",
+                "highlight": false,
+                "highlightColor": "red",
+                "method": "-"
+              },
+              "layout": {
+                "padding": 10,
+                "variant": "single"
+              },
+              "reset": {
+                "backgroundColor": "purple",
+                "foregroundColor": "yellow",
+                "icon": "process",
+                "text": "Reset",
+                "variant": "hidden"
+              },
+              "submit": {
+                "backgroundColor": "purple",
+                "foregroundColor": "yellow",
+                "icon": "cloud-upload",
+                "text": "Submit",
+                "variant": "primary"
+              },
+              "update": {
+                "code": "if (response && response.ok) {\n  notifySuccess(['Update', 'Values updated successfully.']);\n  \"console.log(response)\"\n  \"locationService.reload() este hace falta para que se borre el de error que este de antes\"\n} else {\n  \"console.log(response)\"\n  notifyError(['Error', response.statusText]);\n}",
+                "confirm": false,
+                "contentType": "application/json",
+                "method": "POST",
+                "updatedOnly": false,
+                "url": "http://localhost:5000/add_HTTPThroughput"
+              }
+            },
+            "targets": [
+              {
+                "alias": "",
+                "bucketAggs": [
+                  {
+                    "field": "@timestamp",
+                    "id": "2",
+                    "settings": {
+                      "interval": "auto"
+                    },
+                    "type": "date_histogram"
+                  }
+                ],
+                "datasource": {
+                  "type": "datasource",
+                  "uid": "grafana"
+                },
+                "metrics": [
+                  {
+                    "field": "PacketLossSD_3",
+                    "id": "1",
+                    "type": "avg"
+                  }
+                ],
+                "query": "",
+                "refId": "A",
+                "timeField": "@timestamp"
+              }
+            ],
+            "title": "Add Throughput Operation",
+            "type": "volkovlabs-form-panel"
+          },
+          {
+            "datasource": {
+              "type": "grafana",
+              "uid": "grafana"
+            },
+            "gridPos": {
+              "h": 6,
+              "w": 5,
+              "x": 14,
+              "y": 9
+            },
+            "id": 1004,
+            "options": {
+              "buttonGroup": {
+                "orientation": "center",
+                "size": "md"
+              },
+              "elements": [
+                {
+                  "id": "ip",
+                  "labelWidth": 10,
+                  "section": "",
+                  "title": "IP",
+                  "tooltip": "",
+                  "type": "string",
+                  "value": ""
+                }
+              ],
+              "initial": {
+                "code": "console.log(data, response, initial, elements)",
+                "contentType": "application/json",
+                "highlight": false,
+                "highlightColor": "red",
+                "method": "-"
+              },
+              "layout": {
+                "padding": 10,
+                "variant": "single"
+              },
+              "reset": {
+                "backgroundColor": "purple",
+                "foregroundColor": "yellow",
+                "icon": "process",
+                "text": "Reset",
+                "variant": "hidden"
+              },
+              "submit": {
+                "backgroundColor": "purple",
+                "foregroundColor": "yellow",
+                "icon": "cloud-upload",
+                "text": "Submit",
+                "variant": "primary"
+              },
+              "update": {
+                "code": "if (response && response.ok) {\n  notifySuccess(['Update', 'Values updated successfully.']);\n  \"console.log(response)\"\n  \"locationService.reload() este hace falta para que se borre el de error que este de antes\"\n} else {\n  \"console.log(response)\"\n  notifyError(['Error', response.statusText]);\n}",
+                "confirm": false,
+                "contentType": "application/json",
+                "method": "POST",
+                "updatedOnly": false,
+                "url": "http://localhost:5000/del_Router"
+              }
+            },
+            "targets": [
+              {
+                "alias": "",
+                "bucketAggs": [
+                  {
+                    "field": "@timestamp",
+                    "id": "2",
+                    "settings": {
+                      "interval": "auto"
+                    },
+                    "type": "date_histogram"
+                  }
+                ],
+                "datasource": {
+                  "type": "datasource",
+                  "uid": "grafana"
+                },
+                "metrics": [
+                  {
+                    "id": "1",
+                    "type": "count"
+                  }
+                ],
+                "query": "",
+                "refId": "A",
+                "timeField": "@timestamp"
+              }
+            ],
+            "title": "Delete Router",
+            "type": "volkovlabs-form-panel"
+          },
+          {
+            "datasource": {
+              "type": "grafana",
+              "uid": "grafana"
+            },
+            "gridPos": {
+              "h": 6,
+              "w": 4,
+              "x": 19,
+              "y": 9
+            },
+            "id": 1005,
+            "options": {
+              "buttonGroup": {
+                "orientation": "center",
+                "size": "md"
+              },
+              "elements": [
+                {
+                  "id": "ip",
+                  "labelWidth": 10,
+                  "section": "",
+                  "title": "IP",
+                  "tooltip": "",
+                  "type": "string",
+                  "value": ""
+                },
+                {
+                  "id": "op_id",
+                  "labelWidth": 10,
+                  "section": "",
+                  "title": "OP ID",
+                  "tooltip": "",
+                  "type": "string",
+                  "value": ""
+                }
+              ],
+              "initial": {
+                "code": "console.log(data, response, initial, elements)",
+                "contentType": "application/json",
+                "highlight": false,
+                "highlightColor": "red",
+                "method": "-"
+              },
+              "layout": {
+                "padding": 10,
+                "variant": "single"
+              },
+              "reset": {
+                "backgroundColor": "purple",
+                "foregroundColor": "yellow",
+                "icon": "process",
+                "text": "Reset",
+                "variant": "hidden"
+              },
+              "submit": {
+                "backgroundColor": "purple",
+                "foregroundColor": "yellow",
+                "icon": "cloud-upload",
+                "text": "Submit",
+                "variant": "primary"
+              },
+              "update": {
+                "code": "if (response && response.ok) {\n  notifySuccess(['Update', 'Values updated successfully.']);\n  \"console.log(response)\"\n  \"locationService.reload() este hace falta para que se borre el de error que este de antes\"\n} else {\n  \"console.log(response)\"\n  notifyError(['Error', response.statusText]);\n}",
+                "confirm": false,
+                "contentType": "application/json",
+                "method": "POST",
+                "updatedOnly": false,
+                "url": "http://localhost:5000/del_Operation"
+              }
+            },
+            "targets": [
+              {
+                "alias": "",
+                "bucketAggs": [
+                  {
+                    "field": "@timestamp",
+                    "id": "2",
+                    "settings": {
+                      "interval": "auto"
+                    },
+                    "type": "date_histogram"
+                  }
+                ],
+                "datasource": {
+                  "type": "datasource",
+                  "uid": "grafana"
+                },
+                "metrics": [
+                  {
+                    "id": "1",
+                    "type": "count"
+                  }
+                ],
+                "query": "",
+                "refId": "A",
+                "timeField": "@timestamp"
+              }
+            ],
+            "title": "Delete Op",
+            "type": "volkovlabs-form-panel"
+          }
+        ],
+        "title": "Control Panel",
+        "type": "row"
+      },
+      {
+        "collapsed": true,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 1
+        },
+        "id": 2000,
+        "panels": [],
+        "title": "General Panel",
+        "type": "row"
+      }
+    ],
+    "refresh": "30s",
+    "revision": 1,
+    "schemaVersion": 38,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Cisco IP SLA Stats",
+    "uid": null,
+    "version": 478,
+    "weekStart": ""
+  }
